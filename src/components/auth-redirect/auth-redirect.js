@@ -26,7 +26,6 @@ class AuthRedirect extends React.Component {
   }
 
   render() {
-    // location comes from props directly, token comes from the Redux store
     const { location, token } = this.props;
     const { pathname } = location;
     return (

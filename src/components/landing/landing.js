@@ -7,7 +7,6 @@ import AuthForm from '../auth-form/auth-form';
 import * as authActions from '../../actions/auth';
 import * as routes from '../../lib/routes';
 
-// This component will be connected to the store
 const mapStateToProps = state => ({
   token: state.token,
 });
@@ -22,7 +21,6 @@ class Landing extends React.Component {
   handleSignup = (user) => {
     this.props.userSignup(user)
       .then(() => {
-        // this.props.history is NOT an array. These props are implicitly given to us by Redux's "connect" method when we connect this component to the store. The "push" method is a function that is used to save the history of where we travel in our app, i.e. if we went to "dasboard" or "/signup". Drill down into React dev tools until you see a component called "<Connect(Landing)> in the JSX and check out its props from there to see"
         this.props.history.push(routes.DASHBOARD_ROUTE);
       })
       .catch(console.error);
