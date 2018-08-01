@@ -59,6 +59,7 @@ class Profile extends React.Component {
         <img src={profile.profileImageUrl} width="200"/>
         <h2>This is Your bio</h2>
         <p>{ profile.bio }</p>
+        <p>Your account ID is: {profile.accountId}</p>
         <h3>Location: { profile.location }</h3>
         <h3>Garages: { profile.garages[0] ? profile.garages : 'No Garages' }</h3>
         <button onClick={() => this.setState({ editing: true })}>Edit</button>
