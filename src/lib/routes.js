@@ -4,3 +4,4 @@ export const ROOT_ROUTE = '/';
 export const DASHBOARD_ROUTE = '/dashboard';
 export const PROFILE_ROUTE = '/profiles';
 export const GARAGE_ROUTE = '/garages';
+export const IMAGE_ROUTE = '/attachments';
