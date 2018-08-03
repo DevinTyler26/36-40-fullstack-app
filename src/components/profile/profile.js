@@ -4,6 +4,10 @@ import PropTypes from 'prop-types';
 import * as profileActions from '../../actions/profile';
 import * as routes from '../../lib/routes';
 import ProfileForm from '../profile-form/profile-form';
+import ImageForm from '../image-form/image-form';
+import createImageApiRequest from '../../actions/file';
+
+
 
 const mapStateToProps = store => ({
   profile: store.profile,
@@ -13,6 +17,7 @@ const mapDispatchToProps = dispatch => ({
   createProfile: profile => dispatch(profileActions.createProfileRequest(profile)),
   updateProfile: profile => dispatch(profileActions.updateProfileRequest(profile)),
   fetchProfile: profile => dispatch(profileActions.fetchProfileRequest(profile)),
+  createImage: image => dispatch(createImageApiRequest(image)),
 });
 
 class Profile extends React.Component {
@@ -76,10 +81,12 @@ class Profile extends React.Component {
   }
 
   render() {
+    const { createImage } = this.props;
     const { profile } = this.props;
     return (
       <div className="profile">
         <h1>Profile</h1>
+        <ImageForm onComplete={ createImage } />
         { profile ? this.renderJSX(profile) : <ProfileForm onComplete={ this.handleCreate }/>}
       </div>
     );
@@ -92,5 +99,6 @@ Profile.propTypes = {
   updateProfile: PropTypes.func,
   fetchProfile: PropTypes.func,
   history: PropTypes.object,
+  createImage: PropTypes.func,
 };
 export default connect(mapStateToProps, mapDispatchToProps)(Profile);
