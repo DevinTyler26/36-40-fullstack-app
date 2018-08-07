@@ -55,7 +55,7 @@ export default class ImageForm extends React.Component {
   }
 
   onDrop = (event) => {
-    event.preventDefault();
+    stopEvents(event);
     const { files } = event.dataTransfer;
     const [file] = files;
     fileToBase64String(file)
