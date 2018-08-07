@@ -19,7 +19,7 @@ const mapDispatchToProps = dispatch => ({
 
 class Landing extends React.Component {
   handleSignup = (user) => {
-    this.props.userSignup(user)
+    return this.props.userSignup(user)
       .then(() => {
         this.props.history.push(routes.DASHBOARD_ROUTE);
       })

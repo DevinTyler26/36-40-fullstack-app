@@ -1,7 +1,7 @@
 import React from 'react';
 import { PropTypes } from 'prop-types';
 import validator from 'validator';
-import { renderIf, devLogger } from '../../lib/utils';
+import { renderIf, devLogger } from '../../lib/utils';// eslint-disable-line
 
 import './auth-form.scss';
 
